@@ -54,8 +54,13 @@ static const GLuint indices[] = {
     glGenBuffers(1, &nameBuffer1);
     glBindBuffer(GL_ARRAY_BUFFER, nameBuffer1);
     glBufferData(GL_ARRAY_BUFFER, sizeof(squareVertexData), squareVertexData, GL_STATIC_DRAW);
-    GLsizei count = sizeof(vertices) / sizeof(SceneVertex);
-    GLsizeiptr bufferSizeBytes = sizeof(SceneVertex) * count;
+    
+/* This part is try to working for SceneVertex vertics[]
+ * it is not working well now
+ * commit it to modify later
+*/
+//    GLsizei count = sizeof(vertices) / sizeof(SceneVertex);
+//    GLsizeiptr bufferSizeBytes = sizeof(SceneVertex) * count;
 //    glBufferData(GL_ARRAY_BUFFER, bufferSizeBytes, vertices, GL_STATIC_DRAW);
     
     GLuint nameBuffer2;
@@ -64,8 +69,12 @@ static const GLuint indices[] = {
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
     
     glEnableVertexAttribArray(GLKVertexAttribPosition);
-    glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 5, (GLfloat *) NULL  + 0);
-//    glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE, sizeof(SceneVertex), (GLfloat *) NULL + offsetof(SceneVertex, positionCoords));
+   glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 5, (GLfloat *) NULL  + 0);
+/* This part is try to working for SceneVertex vertics[]
+ * it is not working well now
+ * commit it to modify later
+ */
+//   glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE, sizeof(SceneVertex), (GLfloat *) NULL + offsetof(SceneVertex, positionCoords));
    
     glEnableVertexAttribArray(GLKVertexAttribTexCoord0);
     glVertexAttribPointer(GLKVertexAttribTexCoord0, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 5, (GLfloat*) NULL + 3);
