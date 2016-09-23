@@ -19,9 +19,16 @@ typedef struct {
 } SceneVertex;
 
 static const SceneVertex vertices[] = {
+    // first trangle
     {{-0.5f,-0.5f,0.0}},  //lower left corner
     {{0.5f,-0.5f,0.0}},  // lower right corner
     {{-0.5f,0.5f,0.0}},// upper left corner
+    
+    // second trangle
+//    {{0.5f,-0.5f,0.0}},  // lower right corner
+//    {{-0.5f,0.5f,0.0}}, // upper left corner
+//    {{0.5f,0.5f,0.0}}, //  upper right corner
+    
 };
 
 
@@ -57,7 +64,7 @@ static const SceneVertex vertices[] = {
     
     glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE, sizeof(SceneVertex), NULL);
     
-    glDrawArrays(GL_TRIANGLES, 0, 3);
+    glDrawArrays(GL_TRIANGLES, 0, sizeof(vertices) / sizeof(SceneVertex));
 }
 
 -(void) viewDidUnload {

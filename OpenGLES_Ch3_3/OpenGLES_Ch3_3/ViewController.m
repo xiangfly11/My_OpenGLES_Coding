@@ -85,7 +85,7 @@ static GLKVector3 movementVectors[3] = {
     self.baseEffect.useConstantColor = GL_TRUE;
     self.baseEffect.constantColor = GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f);
     
-    ((MyEAGLContext *) view.context).clearColor = GLKVector4Make(0.0f, 0.0f, 0.0f, 1.0f);
+    ((MyEAGLContext *) view.context).clearColor = GLKVector4Make(0.3f, 0.2f, 0.2f, 0.7f);
     
     
     glGenBuffers(1, &bufferName);
